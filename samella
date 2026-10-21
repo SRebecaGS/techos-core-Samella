@@ -1,0 +1,128 @@
+# TechOS Core - Sprint Express
+
+## 1. USER STORIES (INVEST)
+- **US01:** "Como técnico, quero abrir uma Ordem de Serviço para registrar um conserto."
+  - **C.A.01:** Deve validar o ID do cliente.
+  - **C.A.02:** O status inicial deve ser sempre 'ABERTA'.
+- **US02:** "Como cliente, quero visualizar o status do meu equipamento."
+
+## 2. REQUISITOS NÃO-FUNCIONAIS (RNF)
+- **RNF01 (Segurança):** Sanitização de inputs contra XSS/OWASP no cadastro.
+- **RNF02 (Desempenho):** Tempo de resposta na criação de chamados < 2s.
+
+## 3. DIAGRAMA DE CLASSES
+```text
++--------------------------------------------------+
+|                  <<Abstrata>>                    |
+|                    Usuario                       |
++--------------------------------------------------+
+| - id: int                                        |
+| - nome: string                                   |
+| - email: string                                  |
++--------------------------------------------------+
+| + getId()                                        |
+| + getNome()                                      |
+| + getEmail()                                     |
++--------------------------------------------------+
+                         ^
+                         | (Herança)
+            +------------+------------+
+            |                         |
++--------------------+     +--------------------+
+|      Cliente       |     |      Tecnico       |
++--------------------+     +--------------------+
+| - telefone: string |     | - especialidade    |
++--------------------+     +--------------------+
+
++----------------------------------------------------+
+|                    OrdemServico                    |
++----------------------------------------------------+
+| - id: int                                          |
+| - cliente: Cliente                                 |
+| - tecnico: Tecnico                                 |
+| - status: string                                   |
+| - descricao: string                                |
++----------------------------------------------------+Analisando a sua imagem, encontra-se atualmente na aba **Solicitações de pull** (`Pulls`), e é por isso que não vê a opção de criar/editar o ficheiro `README.md`.
+
+Para voltar à página principal do seu repositório e adicionar o ficheiro `README.md`, siga estes passos simples:
+
+---
+
+### 1. Voltar à aba do Código
+
+No menu superior do repositório, clique na primeira aba à esquerda: **`<> Código`** (fica ao lado de *Problemas* e *Solicitações de pull*).
+
+---
+
+### 2. Criar o ficheiro README.md
+
+Assim que estiver na aba **`<> Código`**:
+
+* Se o repositório continuar sem ficheiros, clique no link azul **"criando um novo arquivo"** (ou no botão **"Add file"** > **"Create new file"** no canto superior direito).
+* No campo do nome do ficheiro, digite exatamente: **`README.md`**.
+
+---
+
+### 3. Colar o conteúdo do Momento 2
+
+Cole o seguinte texto dentro do editor:
+
+```markdown
+# TechOS Core - Sprint Express
+
+## 1. USER STORIES (INVEST)
+- **US01:** "Como técnico, quero abrir uma Ordem de Serviço para registrar um conserto."
+  - **C.A.01:** Deve validar o ID do cliente.
+  - **C.A.02:** O status inicial deve ser sempre 'ABERTA'.
+- **US02:** "Como cliente, quero visualizar o status do meu equipamento."
+
+## 2. REQUISITOS NÃO-FUNCIONAIS (RNF)
+- **RNF01 (Segurança):** Sanitização de inputs contra XSS/OWASP no cadastro.
+- **RNF02 (Desempenho):** Tempo de resposta na criação de chamados < 2s.
+
+## 3. DIAGRAMA DE CLASSES
+```text
++--------------------------------------------------+
+|                  <<Abstrata>>                    |
+|                    Usuario                       |
++--------------------------------------------------+
+| - id: int                                        |
+| - nome: string                                   |
+| - email: string                                  |
++--------------------------------------------------+
+| + getId()                                        |
+| + getNome()                                      |
+| + getEmail()                                     |
++--------------------------------------------------+
+                         ^
+                         | (Herança)
+            +------------+------------+
+            |                         |
++--------------------+     +--------------------+
+|      Cliente       |     |      Tecnico       |
++--------------------+     +--------------------+
+| - telefone: string |     | - especialidade    |
++--------------------+     +--------------------+
+
++----------------------------------------------------+
+|                    OrdemServico                    |
++----------------------------------------------------+
+| - id: int                                          |
+| - cliente: Cliente                                 |
+| - tecnico: Tecnico                                 |
+| - status: string                                   |
+| - descricao: string                                |
++----------------------------------------------------+
+
+```
+
+```
+
+---
+
+### 4. Guardar as alterações
+1. Role até ao fundo da página.
+2. Clique no botão verde **"Commit changes..."** (ou **"Salvar alterações"**).
+3. Confirme clicando novamente em **"Commit changes"**.
+
+```
